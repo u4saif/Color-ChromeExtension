@@ -3,6 +3,8 @@ const hexRegex=/[0-9A-Fa-f]{6}/g;
 function colorPicked(e){ 
     let value=e.target.value.split('#')[1];
     document.getElementById("hexValue").value=value;
+    document.getElementById('hexValue').style.background="white";
+    document.getElementById('hexValue').style.color="black";
 }
 
 var copyToClip=function(id){
