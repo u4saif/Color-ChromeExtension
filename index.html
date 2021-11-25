@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>colorIO</title>
   </head>
   <body>
@@ -22,11 +26,19 @@
       <div class="panelBody">
         <div class="hexContainer">
           <label for="hexValue">Hex (#)</label>
-          <input type="text" id="hexValue" />
+          <input type="text" id="hexValue" value="000000" maxlength="6" />
+          <span id="hexCopyIcon"> <i class="fa fa-copy"></i></span>
         </div>
-        <div></div>
+        <div class="rgbContainer">
+          <label>RGB (r,g,b)</label>
+          <input type="text" id="rvalue" value="255" maxlength="3" /> ,
+          <input type="text" id="gvalue" value="255" maxlength="3" /> ,
+          <input type="text" id="bvalue" value="255" maxlength="3" />
+          <span id="rgbCopyIcon"> <i class="fa fa-clone"></i></span>
+        </div>
         <div></div>
       </div>
     </div>
   </body>
+  <script src="assets/js/appScript.js"></script>
 </html>
