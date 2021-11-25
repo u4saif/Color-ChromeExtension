@@ -20,3 +20,69 @@ body {
   top: 0px;
   left: 0px;
 }
+
+.colorPickerPanel {
+  position: relative;
+  z-index: 1;
+}
+.panelHead {
+  font-size: 15px;
+  align-content: center;
+  padding: 1.2em;
+  line-height: ce;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  display: flex;
+  background: #3367d6;
+  align-items: center;
+  border-radius: 2em;
+  color: white;
+  z-index: 3;
+}
+.panelHead input {
+  border: 2px solid #343433;
+  margin-left: 1em;
+  width: 60%;
+  height: 3em;
+  border-radius: 10px;
+}
+
+.panelBody {
+  width: 33em;
+  height: 20em;
+  background: #517bd6;
+  top: 4em;
+  position: absolute;
+  margin-left: 1em;
+  margin-right: 1em;
+  z-index: -1;
+  border-radius: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.hexContainer {
+  display: inline;
+  grid-column: 1/5;
+  grid-row: 2/2;
+  padding: 4px;
+}
+
+.hexContainer input {
+  width: auto;
+  height: 2.5em;
+  border-radius: 1em;
+  padding: 2px;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.hexContainer label {
+  font-size: 1.5em;
+  color: white;
+  font-weight: 600;
+}
