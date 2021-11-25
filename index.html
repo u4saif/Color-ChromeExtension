@@ -31,9 +31,32 @@
         </div>
         <div class="rgbContainer">
           <label>RGB (r,g,b)</label>
-          <input type="text" id="rvalue" placeholder="0-255" maxlength="3" /> ,
-          <input type="text" id="gvalue" placeholder="0-255" maxlength="3" /> ,
-          <input type="text" id="bvalue" placeholder="0-255" maxlength="3" />
+          <input
+            type="number"
+            id="rvalue"
+            placeholder="0-255"
+            maxlength="3"
+            min="0"
+            max="255"
+          />
+          ,
+          <input
+            type="number"
+            id="gvalue"
+            placeholder="0-255"
+            maxlength="3"
+            min="0"
+            max="255"
+          />
+          ,
+          <input
+            type="number"
+            id="bvalue"
+            placeholder="0-255"
+            maxlength="3"
+            min="0"
+            max="255"
+          />
           <span id="rgbCopyIcon"> <i class="fa fa-clone"></i></span>
         </div>
         <div></div>

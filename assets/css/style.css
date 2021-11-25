@@ -110,12 +110,12 @@ body {
 input#rvalue,
 input#gvalue,
 input#bvalue {
-  width: 3.3em;
+  width: 3.8em;
   height: 1.9em;
   padding-left: 4px;
   font-size: 15px;
   font-weight: 500;
   border-radius: 10px;
   border: none;
-  margin-left: 0.5em;
+  margin-left: 0.1em;
 }
