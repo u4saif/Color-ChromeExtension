@@ -87,16 +87,6 @@ body {
   font-weight: 600;
 }
 
-.fa-copy:before,
-.fa-files-o:before {
-  position: fixed;
-  top: 28%;
-  left: 12em;
-  font-weight: bolder;
-  cursor: pointer;
-  font-size: 15px;
-}
-
 .rgbContainer {
   display: inline;
   grid-column: 1/6;
@@ -118,4 +108,12 @@ input#bvalue {
   border-radius: 10px;
   border: none;
   margin-left: 0.1em;
+}
+
+.fa-clone:before,
+.fa-files-o:before {
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
 }

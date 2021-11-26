@@ -43,8 +43,13 @@ function colorPicked(e){
 
 var colorInputChanged=function(e){
     if(hexRegex.test(e.target.value)) {
+        let rgbValue=convertHexToRGBA(e.target.value);
         let value='#'+e.target.value;
         document.getElementById("colorPicker").value=value;
+        document.getElementById("rvalue").value=rgbValue[0];
+        document.getElementById("gvalue").value=rgbValue[1];
+        document.getElementById("bvalue").value=rgbValue[2];
+
         document.getElementById('hexValue').style.background="white";
         document.getElementById('hexValue').style.color="black";
     } else{
