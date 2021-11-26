@@ -99,7 +99,10 @@ body {
 
 input#rvalue,
 input#gvalue,
-input#bvalue {
+input#bvalue,
+input#hvalue,
+input#svalue,
+input#lvalue {
   width: 3.8em;
   height: 1.9em;
   padding-left: 4px;
@@ -116,4 +119,19 @@ input#bvalue {
   font-weight: 500;
   color: white;
   cursor: pointer;
+}
+
+input#rvalue {
+  background-color: rgb(96 4 69 / 87%);
+  color: #fff;
+}
+
+.hslContainer {
+  display: inline;
+  grid-column: 1/7;
+  grid-row: 4/4;
+  padding: 4px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: 600;
 }
