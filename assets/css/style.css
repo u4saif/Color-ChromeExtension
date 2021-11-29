@@ -5,7 +5,7 @@
 }
 
 body {
-  width: 35em;
+  width: 400px;
   height: 41em;
 }
 
@@ -26,41 +26,52 @@ body {
   z-index: 1;
 }
 .panelHead {
-  font-size: 15px;
+  font-size: 12pt;
+  font-weight: 900;
   align-content: center;
-  padding: 1.2em;
+  padding: 22px;
   line-height: ce;
   margin-top: 0.5em;
   margin-left: 0.5em;
   margin-right: 0.5em;
   display: flex;
-  background: #3367d6;
+  background: rgb(36 0 25);
   align-items: center;
   border-radius: 2em;
   color: white;
   z-index: 3;
+  -webkit-box-shadow: 3px 20px 21px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 20px 21px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 8px 9px 21px 0px rgb(0 0 0 / 65%);
 }
 .panelHead input {
-  border: 2px solid #343433;
   margin-left: 1em;
-  width: 60%;
-  height: 3em;
-  border-radius: 10px;
+  width: 180px;
+  height: 28pt;
+  border-radius: 5px;
 }
 
 .panelBody {
-  width: 33em;
+  width: 390px;
   height: 20em;
-  background: #517bd6;
-  top: 4em;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
   position: absolute;
-  margin-left: 1em;
-  margin-right: 1em;
+  top: 5em;
+  padding: 4px;
   z-index: -1;
   border-radius: 1em;
+  padding: 10px;
   display: grid;
+  margin: 5px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    327deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
 }
 
 .hexContainer {
@@ -89,7 +100,7 @@ body {
 
 .rgbContainer {
   display: inline;
-  grid-column: 1/6;
+  grid-column: 1/7;
   grid-row: 3/3;
   padding: 4px;
   font-size: 1.5em;
@@ -103,14 +114,17 @@ input#bvalue,
 input#hvalue,
 input#svalue,
 input#lvalue {
-  width: 3.8em;
+  width: 4.1em;
   height: 1.9em;
   padding-left: 4px;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 700;
   border-radius: 10px;
   border: none;
   margin-left: 0.1em;
+  box-shadow: 1px 3px 0px 0px #000000;
+  border: 2px solid #1e1e1e;
+  font-family: sans-serif;
 }
 
 .fa-clone:before,
@@ -119,11 +133,6 @@ input#lvalue {
   font-weight: 500;
   color: white;
   cursor: pointer;
-}
-
-input#rvalue {
-  background-color: rgb(96 4 69 / 87%);
-  color: #fff;
 }
 
 .hslContainer {
