@@ -66,6 +66,17 @@ function HEXtoHSL(hex) {
         l: l
     };
 }
+
+function hslToHex(h, s, l) {
+    l /= 100;
+    const a = s * Math.min(l, 1 - l) / 100;
+    const f = n => {
+      const k = (n + h / 30) % 12;
+      const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+      return Math.round(255 * color).toString(16).padStart(2, '0');   // convert to Hex and prefix "0" if needed
+    };
+    return `#${f(0)}${f(8)}${f(4)}`;
+  }
 //Calling Required Functions
 
 var copyToClip=function(id){
@@ -126,13 +137,35 @@ function rgbColor() {
     G=(0<=G && G<256) ? G : 0;
     B=(0<=B && B<256) ? B : 0;
     let convertedvalue=rgbTohex(R,G,B);
+    let hslValue= HEXtoHSL(rgbTohex(R,G,B));
     document.getElementById("hexValue").value=convertedvalue.replace("#","");
     document.getElementById('hexValue').style.background="white";
     document.getElementById('hexValue').style.color="black";
     document.getElementById("colorPicker").value=convertedvalue;
-    
+    document.getElementById("hvalue").value=hslValue["h"];
+    document.getElementById("svalue").value=hslValue["s"];
+    document.getElementById("lvalue").value=hslValue["l"];    
   }
 
+//HSL Input Event Handelers 
+function hslColor(){
+    let h= (0<=parseInt(document.getElementById('hvalue').value)<360) ? parseInt(document.getElementById('hvalue').value) : 0;
+    let s=(0<=parseInt(document.getElementById('svalue').value)<=100) ? parseInt(document.getElementById('svalue').value) : 0;
+    let l=(0<=parseInt(document.getElementById('lvalue').value)<=100) ? parseInt(document.getElementById('lvalue').value) : 0;
+    h=(0<=h && h<360) ? h : 0;
+    s=(0<=s && s<100) ? s : 0;
+    l=(0<=l && l<100) ? l : 0;
+
+    let hexValue= hslToHex(h,s,l);
+    let rgbValue=convertHexToRGBA(hexValue);
+
+    document.getElementById("hexValue").value=hexValue.replace("#","");
+    document.getElementById("colorPicker").value=hexValue;
+    document.getElementById("rvalue").value=rgbValue[0];
+    document.getElementById("gvalue").value=rgbValue[1];
+    document.getElementById("bvalue").value=rgbValue[2];
+
+}
 
 
 document.getElementById("colorPicker")?.addEventListener('input',colorPicked);
@@ -143,3 +176,7 @@ document.getElementById("rvalue")?.addEventListener('input',rgbColor);
 document.getElementById("gvalue")?.addEventListener('input',rgbColor);
 document.getElementById("bvalue")?.addEventListener('input',rgbColor);
 document.getElementById("rgbCopyIcon")?.addEventListener('click',copyToClip.bind(event,'hexValue'));
+
+document.getElementById("hvalue")?.addEventListener('input',hslColor);
+document.getElementById("svalue")?.addEventListener('input',hslColor);
+document.getElementById("lvalue")?.addEventListener('input',hslColor);
