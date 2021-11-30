@@ -13,12 +13,14 @@ body {
   text-align: center;
   padding: 5px;
   color: white;
-  background-color: #0f0303ec;
+  background-color: rgb(31, 1, 22);
   border-bottom-left-radius: 2em;
   border-bottom-right-radius: 2em;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 500;
   top: 0px;
   left: 0px;
+  box-shadow: -20px 19px 60px #066bde, -15px 20px 60px #bebebe;
 }
 
 .colorPickerPanel {
@@ -143,4 +145,18 @@ input#lvalue {
   font-size: 1.5em;
   color: white;
   font-weight: 600;
+}
+
+.saveButton {
+  grid-row: 2/2;
+  grid-column: 6/7;
+}
+
+.fa-lock:before,
+.fa-lock-o:before,
+.fa-unlock:before,
+.fa-unlock-o:before {
+  font-size: 34px;
+  color: white;
+  cursor: pointer;
 }

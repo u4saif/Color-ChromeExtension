@@ -104,6 +104,9 @@ function colorPicked(e){
     document.getElementById("svalue").value=hslValue["s"];
     document.getElementById("lvalue").value=hslValue["l"];
 
+    document.getElementById("lock").style.display="none";
+    document.getElementById("unlock").style.display="inline";
+
 }
 
 var colorInputChanged=function(e){
@@ -122,6 +125,9 @@ var colorInputChanged=function(e){
 
         document.getElementById('hexValue').style.background="white";
         document.getElementById('hexValue').style.color="black";
+
+        document.getElementById("lock").style.display="none";
+        document.getElementById("unlock").style.display="inline";
     } else{
         document.getElementById('hexValue').style.background="#f40808ad";
         document.getElementById('hexValue').style.color="white";
@@ -145,6 +151,9 @@ function rgbColor() {
     document.getElementById("hvalue").value=hslValue["h"];
     document.getElementById("svalue").value=hslValue["s"];
     document.getElementById("lvalue").value=hslValue["l"];    
+
+    document.getElementById("lock").style.display="none";
+    document.getElementById("unlock").style.display="inline";
   }
 
 //HSL Input Event Handelers 
@@ -164,6 +173,9 @@ function hslColor(){
     document.getElementById("rvalue").value=rgbValue[0];
     document.getElementById("gvalue").value=rgbValue[1];
     document.getElementById("bvalue").value=rgbValue[2];
+
+    document.getElementById("lock").style.display="none";
+    document.getElementById("unlock").style.display="inline";
 
 }
 
@@ -186,4 +198,22 @@ chrome.storage.sync.get(['savedColor'], function(color) {
     let value=color["savedColor"];
     this.colorPicked(value);
     }
+    if(document.getElementById("lock")){
+    document.getElementById("lock").style.display="inline";
+    document.getElementById("unlock").style.display="none";}
+    
   });
+ function lock(){
+    let color=  document.getElementById("colorPicker").value;
+    chrome.storage.sync.set({'savedColor':color});
+    document.getElementById("lock").style.display="inline";
+    document.getElementById("unlock").style.display="none";
+ 
+ }
+
+ function unlock(){
+    document.getElementById("unlock").style.display="none";
+    document.getElementById("lock").style.display="inline";
+ }
+  document.getElementById("lock")?.addEventListener('click',lock);
+  document.getElementById("unlock")?.addEventListener('click',lock);
