@@ -87,9 +87,11 @@ var copyToClip=function(id){
 
 //Hex Input Event Handelers 
 function colorPicked(e){ 
-    let rgbValue=convertHexToRGBA(e.target.value);
-    let hslValue=HEXtoHSL(e.target.value)
-    let hexValue=e.target.value.replace("#", "");
+    let value= e?.target?.value || e;
+    let rgbValue=convertHexToRGBA(value);
+    let hslValue=HEXtoHSL(value)
+    let hexValue=value.replace("#", "");
+    document.getElementById("colorPicker").value=value;
     document.getElementById("hexValue").value=hexValue;
     document.getElementById('hexValue').style.background="white";
     document.getElementById('hexValue').style.color="black";
@@ -101,8 +103,6 @@ function colorPicked(e){
     document.getElementById("hvalue").value=hslValue["h"];
     document.getElementById("svalue").value=hslValue["s"];
     document.getElementById("lvalue").value=hslValue["l"];
-
-
 
 }
 
@@ -180,3 +180,10 @@ document.getElementById("rgbCopyIcon")?.addEventListener('click',copyToClip.bind
 document.getElementById("hvalue")?.addEventListener('input',hslColor);
 document.getElementById("svalue")?.addEventListener('input',hslColor);
 document.getElementById("lvalue")?.addEventListener('input',hslColor);
+
+chrome.storage.sync.get(['savedColor'], function(color) {
+    if(document.getElementById("colorPicker")?.value && color["savedColor"] ){
+    let value=color["savedColor"];
+    this.colorPicked(value);
+    }
+  });

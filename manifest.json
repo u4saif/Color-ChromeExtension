@@ -9,5 +9,6 @@
   },
   "background": {
     "scripts": ["assets/js/appScript.js"]
-  }
+  },
+  "permissions": ["storage"]
 }
