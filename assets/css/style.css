@@ -170,6 +170,7 @@ input#lvalue {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
 
 .rgbString {
@@ -209,4 +210,28 @@ input#lvalue {
   content: "\f0c5";
   font-weight: 700;
   padding: 2px;
+}
+
+.fa-expand:before {
+  content: "\f065";
+  position: absolute;
+  top: 20%;
+  left: 86%;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.fa-compress:before {
+  content: "\f066";
+  position: absolute;
+  top: 20%;
+  left: 86%;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#collapse {
+  display: none;
 }

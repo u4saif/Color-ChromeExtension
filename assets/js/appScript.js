@@ -232,8 +232,27 @@ chrome.storage.sync.get(['savedColor'], function(color) {
     document.getElementById("unlock").style.display="none";
     document.getElementById("lock").style.display="inline";
  }
+
+ function expand(action){
+     switch(action){
+         case 'expand':
+            document.getElementById("colorResult").style.height="59vh";
+            document.getElementById("expand").style.display="none";
+            document.getElementById("collapse").style.display="inline";
+            break;
+         case 'collapse':
+            document.getElementById("colorResult").style.height="auto";
+            document.getElementById("expand").style.display="inline";
+            document.getElementById("collapse").style.display="none";
+            break;
+        }
+     }
+     
   document.getElementById("lock")?.addEventListener('click',lock);
   document.getElementById("unlock")?.addEventListener('click',lock);
 
   document.getElementById("rgbStringcopy")?.addEventListener('click',copyToClip.bind(event,'rgbStringValue'));
   document.getElementById("hslStringcopy")?.addEventListener('click',copyToClip.bind(event,'hslStringValue'));
+
+  document.getElementById("expand")?.addEventListener('click',expand.bind(event,'expand'));
+  document.getElementById("collapse")?.addEventListener('click',expand.bind(event,'collapse'));
