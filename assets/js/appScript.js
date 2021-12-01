@@ -80,7 +80,8 @@ function hslToHex(h, s, l) {
 //Calling Required Functions
 
 var copyToClip=function(id){
-	let copy_text_val= document.getElementById(id).select();
+	let copy_text_val= document.getElementById(id);
+    copy_text_val.select();
     let val='#'+copy_text_val;
     document.execCommand("copy",val);
 }
@@ -107,6 +108,10 @@ function colorPicked(e){
     document.getElementById("lock").style.display="none";
     document.getElementById("unlock").style.display="inline";
 
+    document.getElementById("rgbStringValue").value=`rgb(${rgbValue[0]},${rgbValue[1]},${rgbValue[2]})`;
+    document.getElementById("hslStringValue").value=`hsl(${hslValue["h"]},${hslValue["s"]}%,${hslValue["l"]}%)`;
+    document.getElementById("colorResult").style.background=`hsl(${hslValue["h"]},${hslValue["s"]}%,${hslValue["l"]}%)`;
+    
 }
 
 var colorInputChanged=function(e){
@@ -128,6 +133,11 @@ var colorInputChanged=function(e){
 
         document.getElementById("lock").style.display="none";
         document.getElementById("unlock").style.display="inline";
+
+        document.getElementById("rgbStringValue").value=`rgb(${rgbValue[0]},${rgbValue[1]},${rgbValue[2]})`;
+        document.getElementById("hslStringValue").value=`hsl(${hslValue["h"]},${hslValue["s"]}%,${hslValue["l"]}%)`;
+        document.getElementById("colorResult").style.background=`hsl(${hslValue["h"]},${hslValue["s"]}%,${hslValue["l"]}%)`;
+        
     } else{
         document.getElementById('hexValue').style.background="#f40808ad";
         document.getElementById('hexValue').style.color="white";
@@ -154,6 +164,10 @@ function rgbColor() {
 
     document.getElementById("lock").style.display="none";
     document.getElementById("unlock").style.display="inline";
+
+    document.getElementById("rgbStringValue").value=`rgb(${R},${G},${B})`;
+    document.getElementById("hslStringValue").value=`hsl(${hslValue["h"]},${hslValue["s"]}%,${hslValue["l"]}%)`;
+    document.getElementById("colorResult").style.background=`hsl(${hslValue["h"]},${hslValue["s"]}%,${hslValue["l"]}%)`;
   }
 
 //HSL Input Event Handelers 
@@ -177,6 +191,9 @@ function hslColor(){
     document.getElementById("lock").style.display="none";
     document.getElementById("unlock").style.display="inline";
 
+    document.getElementById("rgbStringValue").value=`rgb(${rgbValue[0]},${rgbValue[1]},${rgbValue[2]})`;
+    document.getElementById("hslStringValue").value=`hsl(${h},${s}%,${l}%)`;
+    document.getElementById("colorResult").style.background=hexValue;
 }
 
 
@@ -217,3 +234,6 @@ chrome.storage.sync.get(['savedColor'], function(color) {
  }
   document.getElementById("lock")?.addEventListener('click',lock);
   document.getElementById("unlock")?.addEventListener('click',lock);
+
+  document.getElementById("rgbStringcopy")?.addEventListener('click',copyToClip.bind(event,'rgbStringValue'));
+  document.getElementById("hslStringcopy")?.addEventListener('click',copyToClip.bind(event,'hslStringValue'));

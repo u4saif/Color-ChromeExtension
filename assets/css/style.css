@@ -55,7 +55,7 @@ body {
 
 .panelBody {
   width: 390px;
-  height: 20em;
+  height: 22em;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
   position: absolute;
   top: 5em;
@@ -66,7 +66,7 @@ body {
   display: grid;
   margin: 5px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   background: rgb(131, 58, 180);
   background: linear-gradient(
     327deg,
@@ -159,4 +159,54 @@ input#lvalue {
   font-size: 34px;
   color: white;
   cursor: pointer;
+}
+.colorResult {
+  grid-column: 1/7;
+  grid-row: 5/8;
+  background-color: black;
+  margin: 9px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.rgbString {
+  color: #1e1e1e;
+  position: relative;
+  font-weight: 600;
+}
+
+.rgbString input {
+  border-radius: 4px;
+  text-align: center;
+  font-size: 10pt;
+  font-weight: 600;
+  padding: 2px;
+  background-color: #ffffff;
+  border: none;
+  margin: 2px;
+}
+.cloneIcon {
+  position: absolute;
+  /* z-index: 2; */
+  top: 4px;
+  left: 10px;
+  cursor: pointer;
+}
+
+.cloneIcon2 {
+  position: absolute;
+  /* z-index: 2; */
+  top: 4px;
+  left: 10px;
+  cursor: pointer;
+}
+
+.fa-copy:before,
+.fa-files-o:before {
+  content: "\f0c5";
+  font-weight: 700;
+  padding: 2px;
 }
