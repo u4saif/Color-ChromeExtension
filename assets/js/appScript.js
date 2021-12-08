@@ -237,6 +237,7 @@ chrome.storage.sync.get(['savedColor'], function(color) {
      switch(action){
          case 'expand':
             document.getElementById("colorResult").style.height="59vh";
+            document.getElementById("colorResult").style.transition="all 0.5ms";
             document.getElementById("expand").style.display="none";
             document.getElementById("collapse").style.display="inline";
             break;
