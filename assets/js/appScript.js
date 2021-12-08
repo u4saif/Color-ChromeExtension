@@ -195,6 +195,30 @@ function hslColor(){
     document.getElementById("hslStringValue").value=`hsl(${h},${s}%,${l}%)`;
     document.getElementById("colorResult").style.background=hexValue;
 }
+//Random color generator
+function getRandomColor() {
+    var letters = "0123456789ABCDEF";
+    var color = "#";
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
+//--Random color divs
+function randomDivs(){
+    Array.from(Array(100)).forEach((x, i) => {
+        var circlePalet=document.querySelector('.circlePalet');
+        let element = document.createElement("div");
+        element.setAttribute("id",i);
+        element.className="colorItem";
+        element.style.border="1px solid #ffffff3b;";
+        let randomColor=getRandomColor();
+        element.style.background=randomColor;
+        circlePalet.appendChild(element);
+        document.getElementById(i).innerHTML=randomColor.replace("#","");
+      });
+}
 
 
 document.getElementById("colorPicker")?.addEventListener('input',colorPicked);
@@ -219,6 +243,7 @@ chrome.storage.sync.get(['savedColor'], function(color) {
     document.getElementById("lock").style.display="inline";
     document.getElementById("unlock").style.display="none";}
     
+    randomDivs();
   });
  function lock(){
     let color=  document.getElementById("colorPicker").value;
