@@ -215,8 +215,14 @@ function randomDivs(){
         element.style.border="1px solid #ffffff3b;";
         let randomColor=getRandomColor();
         element.style.background=randomColor;
-        circlePalet.appendChild(element);
-        document.getElementById(i).innerHTML=randomColor.replace("#","");
+        circlePalet?.appendChild(element);
+        if(document.getElementById(i)){
+            document.getElementById(i).innerHTML=randomColor.replace("#","");
+        }
+        element.onclick = function ($event) {
+            let divColor="#"+$event.currentTarget.innerHTML;
+            colorPicked(divColor);
+        };
       });
 }
 
