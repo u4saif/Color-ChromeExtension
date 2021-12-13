@@ -288,3 +288,6 @@ chrome.storage.sync.get(['savedColor'], function(color) {
 
   document.getElementById("expand")?.addEventListener('click',expand.bind(event,'expand'));
   document.getElementById("collapse")?.addEventListener('click',expand.bind(event,'collapse'));
+  let url=chrome.extension.getURL('assets/images/icons/favicon-32x32.png');
+  document.getElementById("logo").style.backgroundImage=`url(${url})`;
+  document.getElementById("photo").style.backgroundImage=`url(${chrome.extension.getURL('assets/images/DevPic.jpg')}`;

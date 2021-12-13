@@ -1,7 +1,6 @@
 {
-  "manifest_version": 2,
   "name": "Color IO",
-  "version": "21.12.01",
+  "version": "0.0.21",
   "description": "color calculator app",
   "browser_action": {
     "default_icon": "assets/images/icons/favicon-32x32.png",
@@ -10,5 +9,7 @@
   "background": {
     "scripts": ["assets/js/appScript.js"]
   },
-  "permissions": ["storage"]
+  "permissions": ["storage"],
+  "web_accessible_resources": ["assets/images/*"],
+  "manifest_version": 2
 }
