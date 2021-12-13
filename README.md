@@ -1,14 +1,15 @@
 # Color-ChromeExtension
 
-A Chrome Extension for enhance Colors manipulation
+A Chrome Extension for enhance Colors picker & color converter
 
 Best color picker tool. Pick colors from a browser tab and copy in any format.
 Awesome color picker allows you to select a pixel on the page and get color in popular formats.
+Grab colors from any website. It is Fast and reliable color picker tool.
 
 Features:
 
 ```
-⭐ Pick a color from anywhere on your screen 
+⭐ Pick a color from anywhere on your screen
 ⭐ Just select the color picker and pick the color it will generate the color code
 ⭐ Formats: hex, hex shorthand, RGB, HSL
 ⭐ History panel with the latest selected colors

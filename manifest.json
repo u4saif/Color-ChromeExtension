@@ -1,10 +1,15 @@
 {
-  "name": "Color IO",
+  "name": "Pick Color",
   "version": "0.0.21",
-  "description": "color calculator app",
+  "description": "A Chrome Extension for enhance Colors picker & color converter",
   "browser_action": {
     "default_icon": "assets/images/icons/favicon-32x32.png",
     "default_popup": "index.html"
+  },
+  "icons": {
+    "16": "assets/images/icons/favicon-16x16.png",
+    "48": "assets/images/icons/android-icon-48x48.png",
+    "128": "assets/images/icons/android-icon-48x48.png"
   },
   "background": {
     "scripts": ["assets/js/appScript.js"]
