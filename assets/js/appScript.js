@@ -329,7 +329,10 @@ function expand(action) {
 function showHideContactUS() {
   if (document.getElementById("contactUs")) {
     if (this.contactUsHide) {
-      document.getElementById("contactUs").style.display = "none";
+      document.getElementById("contactUs").style.transform =
+        "translate(50%,-150%)";
+      document.getElementById("contactUs").style.transition =
+        "transform cubic-bezier(0.17, 0.68, 0.57, 0.77) 0.2s";
       document.getElementById(
         "logo"
       ).style.backgroundImage = `url(${chrome.extension.getURL(
@@ -343,6 +346,7 @@ function showHideContactUS() {
       this.contactUsHide = false;
     } else {
       document.getElementById("contactUs").style.display = "grid";
+      document.getElementById("contactUs").style.transform = "translate(0%,0%)";
       this.contactUsHide = true;
     }
   }
