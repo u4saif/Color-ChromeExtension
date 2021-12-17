@@ -6,6 +6,8 @@ Best color picker tool. Pick colors from a browser tab and copy in any format.
 Awesome color picker allows you to select a pixel on the page and get color in popular formats.
 Grab colors from any website. It is Fast and reliable color picker tool.
 
+## Link For Chorome Extention : [Click Here](https://chrome.google.com/webstore/detail/pick-color/khjolfgpcjhcmealonfmmchhagngnecf)
+
 Features:
 
 ```
